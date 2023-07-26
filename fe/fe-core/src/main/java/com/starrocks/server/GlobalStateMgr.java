@@ -284,6 +284,7 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.Set;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
@@ -2634,6 +2635,10 @@ public class GlobalStateMgr {
 
     public String getToken() {
         return nodeMgr.getToken();
+    }
+
+    public Optional<Database> mayGetDb(String name) {
+        return Optional.ofNullable(localMetastore.getDb(name));
     }
 
     public Database getDb(String name) {
