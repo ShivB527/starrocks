@@ -284,6 +284,7 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.Set;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
@@ -2640,8 +2641,6 @@ public class GlobalStateMgr {
         return localMetastore.getDb(name);
     }
 
-<<<<<<< HEAD
-=======
     public Optional<Table> mayGetTable(long dbId, long tableId) {
         return mayGetDb(dbId).flatMap(db -> db.tryGetTable(tableId));
     }
@@ -2654,7 +2653,6 @@ public class GlobalStateMgr {
         return Optional.ofNullable(localMetastore.getDb(dbId));
     }
 
->>>>>>> 9eea14e87b ([Feature] support meta functions (#28094))
     public Database getDb(long dbId) {
         return localMetastore.getDb(dbId);
     }
